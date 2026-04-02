@@ -71,6 +71,10 @@ with st.sidebar:
     st.button("Reset Points", on_click=reset_state)
     mode = st.radio("Click Mode", ["Calibrate (4 Clicks)", "Capture Curve"])
     
+    # NEW: Show instructions when "Capture Curve" is selected
+    if mode == "Capture Curve":
+        st.info("📍 **Instruction:** Select for y=min, y=max and 2 points in between in the curve.")
+    
     st.divider()
     st.subheader("Real Axis Values")
     col1, col2 = st.columns(2)
